@@ -3,137 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nostalgia 90an</title>
+  <title>Playlist Nostalgia 90-an</title>
   <style>
     body {
       font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #fdf0d5, #fcbf49);
+      color: #222;
       margin: 0;
       padding: 0;
-      background: linear-gradient(120deg, #fbe4d8, #fcd5ce);
-      color: #222;
     }
-    .carousel {
-      max-width: 600px;
+    .container {
+      max-width: 700px;
       margin: 50px auto;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
+      padding: 20px;
+      background: #fff3ec;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
-    .slide {
-      display: none;
-      padding: 30px;
-      text-align: center;
+    .song {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed #f28482;
     }
-    .slide.active {
-      display: block;
+    h2 {
+      color: #bc6c25;
     }
-    .slide img {
-      max-width: 100%;
+    p {
+      font-size: 14px;
+      font-style: italic;
+      color: #5e503f;
+    }
+    iframe {
+      width: 100%;
+      height: 80px;
       border-radius: 12px;
-      margin-bottom: 20px;
-      border: 4px solid #ffb5a7;
-    }
-    .controls {
-      text-align: center;
       margin-top: 10px;
     }
-    .controls button {
-      background: #ffb5a7;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      font-family: 'Courier New', monospace;
-      transition: background 0.3s ease;
-    }
-    .controls button:hover {
-      background: #f28482;
-    }
-    audio {
-      margin-top: 20px;
-      width: 100%;
-      border-radius: 10px;
-    }
-    h2, h3, p {
-      font-family: 'Courier New', monospace;
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #7d5a50;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-
-  <div class="carousel">
-
-    <!-- Slide 1 -->
-    <div class="slide active">
-      <img src="chrisye.jpg" alt="Chrisye">
+  <div class="container">
+    <div class="song">
       <h2>Chrisye – Kala Cinta Menggoda</h2>
-      <p>“Kala cinta menggoda... segala rasa berubah.”</p>
-      <audio controls>
-        <source src="https://open.spotify.com/embed/album/2sap2qow60v06y9ztkkqoq?utm_source=generator" type="audio/mpeg">
-        Browser kamu nggak dukung audio player 😢
-      </audio>
+      <p>“Kala cinta datang perlahan, ia menggoda tanpa suara — seperti bayangmu dalam diam.”</p>
+      <iframe src="https://open.spotify.com/embed/album/2sap2qow60v06y9ztkkqoq?utm_source=generator" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
-
-    <!-- Slide 2 -->
-    <div class="slide">
-      <img src="kla.jpg" alt="KLa Project">
+    <div class="song">
       <h2>KLa Project – Yogyakarta</h2>
-      <p>Rindu ini… makin terasa saat ku sendiri.</p>
-      <audio controls>
-        <source src="kla.mp3" type="audio/mpeg">
-        Browser kamu nggak dukung audio player 😢
-      </audio>
+      <p>“Kota itu masih sama… tapi langkahmu tak lagi berjalan bersamaku di jalan kenangan.”</p>
+      <iframe src="https://open.spotify.com/embed/track/xxx" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
-
-    <!-- Slide 3 -->
-    <div class="slide">
-      <img src="boyz.jpg" alt="Boyz II Men">
-      <h2>Boyz II Men – End of the Road</h2>
-      <p>Emotional damage versi original 😭</p>
-      <audio controls>
-        <source src="boyz.mp3" type="audio/mpeg">
-        Browser kamu nggak dukung audio player 😢
-      </audio>
+    <div class="song">
+      <h2>Nike Ardilla – Bintang Kehidupan</h2>
+      <p>“Di langit gelap, ada bintang—seperti harapanku yang tetap menyala meski tertinggal.”</p>
+      <iframe src="https://open.spotify.com/embed/track/xxx" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
-
+    <!-- Tambahkan lebih banyak lagu di sini -->
+    <div class="footer">
+      📼 Playlist nostalgia 90-an – diramu dengan cinta oleh Best 💛
+    </div>
   </div>
-
-  <div class="controls">
-    <button onclick="prevSlide()">← Prev</button>
-    <button onclick="nextSlide()">Next →</button>
-  </div>
-
-  <script>
-    let current = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        const audio = slide.querySelector('audio');
-        if (audio) {
-          if (i !== index) {
-            audio.pause();
-            audio.currentTime = 0;
-          }
-        }
-      });
-    }
-
-    function nextSlide() {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }
-
-    function prevSlide() {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
-    }
-  </script>
-
 </body>
 </html>
